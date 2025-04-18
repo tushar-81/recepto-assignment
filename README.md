@@ -1,12 +1,50 @@
-# React + Vite
+# Recepto Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lead generation platform dashboard that shows curated high-intent leads from different sources.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Dashboard with two types of leads (Recepto Network and Organization Network)
+- Lead management with unlock, assign, like/dislike functionality
+- Team analytics page with graphs for lead metrics
+- Organization user management
+- Persistent data using localStorage
+- Consistent UI across multiple users from the same organization
 
-## Expanding the ESLint configuration
+## Login Information
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The following credentials can be used to login to the application:
+
+| Username | Password | Role |
+|----------|----------|------|
+| admin    | admin123 | Admin |
+| user1    | pass123  | Manager |
+| user2    | pass123  | Agent |
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the development server with `npm run dev`
+4. Open the application in your browser at `http://localhost:5173`
+
+## Technologies Used
+
+- React + Vite
+- React Router
+- Tailwind CSS
+- Recharts for data visualization
+- LocalStorage for data persistence
+
+## Project Structure
+
+```
+src/
+  components/       # Reusable UI components
+  pages/            # Main application pages
+  assets/           # Static assets and images
+```
+
+## Note
+
+This is a frontend-only application with no backend. All data is stored in localStorage and will persist between sessions.
