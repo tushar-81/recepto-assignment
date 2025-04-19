@@ -6,36 +6,36 @@ function Login() {
   const navigate = useNavigate();
   
   useEffect(() => {
-    // Check if there's already a logged in user
+   
     const loggedInUser = localStorage.getItem('receptoLoggedUser');
     
-    // Check if user manually logged out 
+   
     const manualLogout = sessionStorage.getItem('manualLogout');
     
     if (loggedInUser) {
+      
       navigate('/dashboard');
     } else if (manualLogout === 'true') {
-      // Clear the manual logout flag but don't show prompt
+      
       console.log('Manual logout detected, clearing flag');
       sessionStorage.removeItem('manualLogout');
-    } else {
-      // Show login prompt for normal navigation to login page
-      showLoginPrompt();
+      
     }
+    
   }, [navigate]);
   
   const showLoginPrompt = () => {
     const username = prompt('Enter your username:');
-    if (username === null) return; // User clicked Cancel
+    if (username === null) return; 
     
     const password = prompt('Enter your password:');
-    if (password === null) return; // User clicked Cancel
+    if (password === null) return; 
     
-    // Get users from localStorage
+    
     const usersJson = localStorage.getItem('receptoUsers');
     const users = usersJson ? JSON.parse(usersJson) : [];
     
-    // Authenticate user
+    
     const user = users.find(
       user => user.username === username && user.password === password
     );
@@ -58,7 +58,7 @@ function Login() {
       }, 200);
     } else {
       alert('Invalid username or password');
-      showLoginPrompt(); // Try again
+      showLoginPrompt(); 
     }
   };
   
